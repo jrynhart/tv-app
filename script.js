@@ -1,9 +1,9 @@
 function getRandomChannel() {
   const channels = [
-    "./img/channel1.png",
-    "./img/channel2.png",
-    "./img/channel3.png",
-    // "./img/channel4.png",
+    "channel1.png",
+    "channel2.png",
+    "channel3.png",
+    "channel4.png",
     // "./img/channel5.png"
   ];
 
@@ -12,9 +12,18 @@ function getRandomChannel() {
 }
 
 function updateChannel() {
-  const channelImage = document.getElementById("channel-image");
-  channelImage.src = getRandomChannel();
-
   const clickAudio = document.getElementById("click-audio");
   clickAudio.play();
+
+  const channelImage = document.getElementById("channel-image");
+
+  // get a different channel each time the button is clicked
+  let rand, currentChannel;
+  do {
+    rand = getRandomChannel();
+    currentChannel = channelImage.src.substring(channelImage.src.lastIndexOf("/") + 1)
+  } while (rand === currentChannel);
+  
+  // set the screen to the new channel image
+  channelImage.src = "img/" + rand;
 }
