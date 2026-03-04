@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">  
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>TV App</title>
+      <link rel="stylesheet" href="./style.css">
+      <script src="./script.js"></script>
+  </head>
+
+  <body>
+      <div class="container">
+        <h1>TV App</h1>
+        <p>Click the top dial to change the channel</p>
+
+        <div class="tv-container">
+          <div class="tv-background">
+            <img src="./img/tv-base-3.png" alt="TV Image">
+            <button id="change-channel-button" onclick="updateChannel()"></button>
+          </div>
+
+          <div class="tv-screen">
+            <img id="channel-image" src="./img/channel1.png" alt="TV Screen Image">
+          </div>
+        </div>
+      </div>
+
+      <audio id="click-audio" src="./audio/Mouse-Click-00-c-FesliyanStudios.com.mp3" type="audio/mpeg"></audio>
+  </body>
+
+  <script>
+    console.log(getRandomChannel())
+  </script>
+
+</html>
