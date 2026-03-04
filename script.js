@@ -12,11 +12,14 @@ function getRandomChannel() {
 
 function updateChannel() {
   const channelImage = document.getElementById("channel-image");
-
-  // get a different channel each time 
+ 
   let randomChannel, currentChannel;
+
+  // get a different channel each time. call getRandomChannel() until it returns a different channel than the current one
   do {
     randomChannel = getRandomChannel();
+
+    // get the current channel from the image source, removing the path to get just the filename
     currentChannel = channelImage.src.substring(channelImage.src.lastIndexOf("/") + 1);
     
   } while (randomChannel === currentChannel);
@@ -31,3 +34,6 @@ function clickDial() {
 
   updateChannel();
 }
+
+
+
